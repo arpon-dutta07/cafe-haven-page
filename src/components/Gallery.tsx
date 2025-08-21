@@ -1,15 +1,24 @@
 import React from 'react';
+import latteArtImage from '@/assets/gallery-latte-art.jpg';
+import pastriesImage from '@/assets/gallery-pastries.jpg';
+import interiorImage from '@/assets/gallery-interior.jpg';
+import baristaImage from '@/assets/gallery-barista.jpg';
+import beansImage from '@/assets/gallery-beans.jpg';
+import dessertsImage from '@/assets/gallery-desserts.jpg';
+import espressoImage from '@/assets/gallery-espresso.jpg';
+import seatingImage from '@/assets/gallery-seating.jpg';
+import sustainableImage from '@/assets/gallery-sustainable.jpg';
 
 const galleryItems = [
-  { id: 1, image: "☕", title: "Perfect Latte Art", category: "Beverages" },
-  { id: 2, image: "🥐", title: "Fresh Pastries", category: "Food" },
-  { id: 3, image: "🏪", title: "Cozy Interior", category: "Atmosphere" },
-  { id: 4, image: "👨‍🍳", title: "Master Barista", category: "Team" },
-  { id: 5, image: "🫘", title: "Premium Beans", category: "Ingredients" },
-  { id: 6, image: "🍰", title: "Delicious Desserts", category: "Food" },
-  { id: 7, image: "☕", title: "Espresso Excellence", category: "Beverages" },
-  { id: 8, image: "🪑", title: "Comfortable Seating", category: "Atmosphere" },
-  { id: 9, image: "🌱", title: "Sustainable Sourcing", category: "Values" }
+  { id: 1, image: latteArtImage, title: "Perfect Latte Art", category: "Beverages" },
+  { id: 2, image: pastriesImage, title: "Fresh Pastries", category: "Food" },
+  { id: 3, image: interiorImage, title: "Cozy Interior", category: "Atmosphere" },
+  { id: 4, image: baristaImage, title: "Master Barista", category: "Team" },
+  { id: 5, image: beansImage, title: "Premium Beans", category: "Ingredients" },
+  { id: 6, image: dessertsImage, title: "Delicious Desserts", category: "Food" },
+  { id: 7, image: espressoImage, title: "Espresso Excellence", category: "Beverages" },
+  { id: 8, image: seatingImage, title: "Comfortable Seating", category: "Atmosphere" },
+  { id: 9, image: sustainableImage, title: "Sustainable Sourcing", category: "Values" }
 ];
 
 const Gallery = () => {
@@ -34,8 +43,12 @@ const Gallery = () => {
                 index % 5 === 0 ? 'md:row-span-2' : ''
               } ${index % 7 === 0 ? 'lg:col-span-2' : ''}`}
             >
-              <div className="bg-gradient-coffee aspect-square flex items-center justify-center text-6xl md:text-7xl lg:text-8xl shadow-lg">
-                {item.image}
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
               </div>
               
               {/* Overlay */}

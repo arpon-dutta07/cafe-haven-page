@@ -1,6 +1,9 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star } from 'lucide-react';
+import sarahImage from '@/assets/customer-sarah.jpg';
+import michaelImage from '@/assets/customer-michael.jpg';
+import emilyImage from '@/assets/customer-emily.jpg';
 
 const testimonials = [
   {
@@ -8,21 +11,21 @@ const testimonials = [
     name: "Sarah Johnson",
     review: "The best coffee in town! The atmosphere is so cozy and welcoming. I come here every morning for my latte and it never disappoints.",
     rating: 5,
-    avatar: "👩🏻‍💼"
+    avatar: sarahImage
   },
   {
     id: 2,
     name: "Michael Chen",
     review: "Amazing cold brew and the staff is incredibly friendly. The latte art is beautiful and the taste is even better. Highly recommended!",
     rating: 5,
-    avatar: "👨🏻‍💻"
+    avatar: michaelImage
   },
   {
     id: 3,
     name: "Emily Rodriguez",
     review: "Coffee Haven has become my second home. Great wifi, comfortable seating, and the most delicious pastries. Perfect for work or relaxation.",
     rating: 5,
-    avatar: "👩🏻‍🎨"
+    avatar: emilyImage
   }
 ];
 
@@ -47,8 +50,12 @@ const Testimonials = () => {
             >
               <CardContent className="p-6 text-center">
                 {/* Avatar */}
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-warm rounded-full flex items-center justify-center text-2xl shadow-md">
-                  {testimonial.avatar}
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden shadow-md">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Name */}
