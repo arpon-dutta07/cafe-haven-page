@@ -2,41 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Coffee Haven Design System - Warm, cozy coffee shop theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Coffee Brand Colors */
+    --coffee-dark: 25 50% 15%;        /* Rich dark brown */
+    --coffee-medium: 30 35% 35%;      /* Medium roast brown */
+    --coffee-light: 35 25% 55%;       /* Light coffee brown */
+    --cream: 50 60% 95%;              /* Warm cream */
+    --beige: 40 40% 88%;              /* Soft beige */
+    --gold: 45 95% 70%;               /* Warm gold accent */
+    
+    /* Semantic Design Tokens */
+    --background: 50 60% 98%;         /* Warm white */
+    --foreground: 25 50% 15%;         /* Coffee dark */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 50 60% 97%;
+    --card-foreground: 25 50% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 50 60% 98%;
+    --popover-foreground: 25 50% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 25 50% 15%;            /* Coffee dark */
+    --primary-foreground: 50 60% 95%; /* Cream */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 40 40% 88%;          /* Beige */
+    --secondary-foreground: 25 50% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 40% 92%;
+    --muted-foreground: 30 35% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 95% 70%;             /* Gold */
+    --accent-foreground: 25 50% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 50 60% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 30% 85%;
+    --input: 40 30% 90%;
+    --ring: 45 95% 70%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Coffee Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(25 50% 15%) 0%, hsl(30 35% 25%) 50%, hsl(25 50% 15%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(45 95% 70%) 0%, hsl(40 60% 80%) 100%);
+    --gradient-coffee: linear-gradient(180deg, hsl(30 35% 35%) 0%, hsl(25 50% 15%) 100%);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-steam: steam 3s ease-in-out infinite;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +74,37 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode with coffee evening theme */
+    --background: 25 50% 8%;          /* Very dark coffee */
+    --foreground: 50 60% 95%;         /* Cream */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 45% 12%;
+    --card-foreground: 50 60% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 45% 10%;
+    --popover-foreground: 50 60% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 45 95% 70%;            /* Gold */
+    --primary-foreground: 25 50% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 35% 20%;
+    --secondary-foreground: 50 60% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 30% 25%;
+    --muted-foreground: 40 20% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 95% 70%;
+    --accent-foreground: 25 50% 15%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 50 60% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 30 30% 20%;
+    --input: 30 30% 18%;
+    --ring: 45 95% 70%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(25 50% 8%) 0%, hsl(30 35% 15%) 50%, hsl(25 50% 8%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(45 95% 60%) 0%, hsl(40 60% 50%) 100%);
   }
 }
 
@@ -100,6 +114,88 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+/* Coffee Animations */
+@keyframes steam {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+    opacity: 0.7; 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(2deg); 
+    opacity: 1; 
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom Components */
+.coffee-steam::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(transparent, rgba(255,255,255,0.6), transparent);
+  border-radius: 50%;
+  animation: var(--animation-steam);
+  transform: translateX(-50%);
+}
+
+.coffee-steam::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 60%;
+  width: 3px;
+  height: 30px;
+  background: linear-gradient(transparent, rgba(255,255,255,0.4), transparent);
+  border-radius: 50%;
+  animation: var(--animation-steam);
+  animation-delay: 0.5s;
+  transform: translateX(-50%);
+}
+
+.hover-zoom {
+  transition: var(--transition-smooth);
+}
+
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
 }

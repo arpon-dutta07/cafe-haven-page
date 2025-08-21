@@ -18,7 +18,17 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'poppins': ['Poppins', 'sans-serif'],
+			},
 			colors: {
+				'coffee-dark': 'hsl(var(--coffee-dark))',
+				'coffee-medium': 'hsl(var(--coffee-medium))',
+				'coffee-light': 'hsl(var(--coffee-light))',
+				'cream': 'hsl(var(--cream))',
+				'beige': 'hsl(var(--beige))',
+				'gold': 'hsl(var(--gold))',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -62,6 +72,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-warm': 'var(--gradient-warm)',
+				'gradient-coffee': 'var(--gradient-coffee)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
