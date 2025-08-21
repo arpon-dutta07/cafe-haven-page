@@ -23,12 +23,14 @@ export default {
 				'poppins': ['Poppins', 'sans-serif'],
 			},
 			colors: {
-				'coffee-dark': 'hsl(var(--coffee-dark))',
-				'coffee-medium': 'hsl(var(--coffee-medium))',
-				'coffee-light': 'hsl(var(--coffee-light))',
-				'cream': 'hsl(var(--cream))',
-				'beige': 'hsl(var(--beige))',
-				'gold': 'hsl(var(--gold))',
+				'sage-green': 'hsl(var(--sage-green))',
+				'sage-light': 'hsl(var(--sage-light))',
+				'sage-pale': 'hsl(var(--sage-pale))',
+				'earth-brown': 'hsl(var(--earth-brown))',
+				'warm-beige': 'hsl(var(--warm-beige))',
+				'cream-white': 'hsl(var(--cream-white))',
+				'stone-gray': 'hsl(var(--stone-gray))',
+				'natural-white': 'hsl(var(--natural-white))',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -74,9 +76,9 @@ export default {
 				}
 			},
 			backgroundImage: {
-				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-soft': 'var(--gradient-soft)',
 				'gradient-warm': 'var(--gradient-warm)',
-				'gradient-coffee': 'var(--gradient-coffee)',
+				'gradient-earth': 'var(--gradient-earth)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

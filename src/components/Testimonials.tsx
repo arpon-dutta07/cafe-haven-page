@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Star } from 'lucide-react';
 import sarahImage from '@/assets/customer-sarah.jpg';
 import michaelImage from '@/assets/customer-michael.jpg';
@@ -31,14 +32,14 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-16 bg-beige">
+    <section id="testimonials" className="py-20 bg-sage-pale">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-light text-earth-brown mb-6">
             What Our Customers Say
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it - hear from our happy customers
+          <p className="text-lg text-stone-gray max-w-xl mx-auto font-light">
+            Genuine experiences from our coffee community
           </p>
         </div>
 
@@ -46,11 +47,11 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <Card 
               key={testimonial.id} 
-              className="bg-card border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 fade-in-up"
+              className="bg-card border-0 shadow-sm hover-lift transition-all duration-200"
             >
-              <CardContent className="p-6 text-center">
+              <CardContent className="p-8 text-center">
                 {/* Avatar */}
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden shadow-md">
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full overflow-hidden shadow-sm">
                   <img 
                     src={testimonial.avatar} 
                     alt={testimonial.name}
@@ -59,22 +60,22 @@ const Testimonials = () => {
                 </div>
 
                 {/* Name */}
-                <h3 className="text-xl font-semibold text-primary mb-2">
+                <h3 className="text-lg font-light text-earth-brown mb-4">
                   {testimonial.name}
                 </h3>
 
                 {/* Rating */}
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-6">
                   {[...Array(testimonial.rating)].map((_, index) => (
                     <Star
                       key={index}
-                      className="w-5 h-5 text-accent fill-current"
+                      className="w-4 h-4 text-sage-light fill-current"
                     />
                   ))}
                 </div>
 
                 {/* Review */}
-                <p className="text-muted-foreground leading-relaxed italic">
+                <p className="text-stone-gray leading-relaxed font-light text-sm">
                   "{testimonial.review}"
                 </p>
               </CardContent>
@@ -83,17 +84,17 @@ const Testimonials = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-12">
-          <p className="text-lg text-muted-foreground mb-4">
-            Ready to experience Coffee Haven for yourself?
+        <div className="text-center mt-16">
+          <p className="text-lg text-stone-gray mb-6 font-light">
+            Ready to experience Coffee Haven?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+            <Button className="bg-sage-green hover:bg-sage-green/90 text-natural-white px-10 py-3 rounded-sm font-light transition-all duration-200 hover-lift">
               Visit Us Today
-            </button>
-            <button className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105">
+            </Button>
+            <Button variant="outline" className="border border-sage-green text-sage-green hover:bg-sage-green hover:text-natural-white px-10 py-3 rounded-sm font-light transition-all duration-200 hover-lift">
               Leave a Review
-            </button>
+            </Button>
           </div>
         </div>
       </div>

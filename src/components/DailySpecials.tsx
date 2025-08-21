@@ -81,14 +81,14 @@ const DailySpecials = () => {
   };
 
   return (
-    <section id="specials" className="py-16 bg-secondary">
+    <section id="specials" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-light text-earth-brown mb-6">
             Today's Special Blends
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Handcrafted beverages made with the finest ingredients and served with love
+          <p className="text-lg text-stone-gray max-w-xl mx-auto font-light">
+            Handcrafted beverages made with care and the finest ingredients
           </p>
         </div>
 
@@ -101,26 +101,26 @@ const DailySpecials = () => {
             >
               {specials.map((special) => (
                 <div key={special.id} className="w-full flex-shrink-0">
-                  <Card className="bg-card border-0 shadow-xl mx-4">
+                  <Card className="bg-card border-0 shadow-sm mx-4 hover-lift transition-all duration-200">
                     <CardContent className="p-8 text-center">
-                      <div className="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg">
+                      <div className="w-40 h-40 mx-auto mb-6 rounded-sm overflow-hidden shadow-sm">
                         <img 
                           src={special.image} 
                           alt={special.name}
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                          className="w-full h-full object-cover"
                         />
                       </div>
-                      <h3 className="text-2xl font-bold text-primary mb-2">
+                      <h3 className="text-xl font-light text-earth-brown mb-3">
                         {special.name}
                       </h3>
-                      <p className="text-3xl font-bold text-accent mb-4">
+                      <p className="text-2xl font-light text-sage-green mb-4">
                         {special.price}
                       </p>
-                      <p className="text-muted-foreground text-lg leading-relaxed max-w-md mx-auto">
+                      <p className="text-stone-gray text-sm leading-relaxed max-w-sm mx-auto font-light mb-6">
                         {special.description}
                       </p>
                       <Button 
-                        className="mt-6 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-full"
+                        className="bg-sage-green hover:bg-sage-green/90 text-natural-white font-light px-8 py-2 rounded-sm transition-all duration-200 hover-lift"
                       >
                         Order Now
                       </Button>
@@ -136,18 +136,18 @@ const DailySpecials = () => {
             variant="outline"
             size="icon"
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-card hover:bg-accent border-primary/20 shadow-lg"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-card hover:bg-sage-pale border-sage-pale shadow-sm rounded-sm"
           >
-            <ChevronLeft className="h-6 w-6" />
+            <ChevronLeft className="h-5 w-5 text-sage-green" />
           </Button>
           
           <Button
             variant="outline"
             size="icon"
             onClick={goToNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-card hover:bg-accent border-primary/20 shadow-lg"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-card hover:bg-sage-pale border-sage-pale shadow-sm rounded-sm"
           >
-            <ChevronRight className="h-6 w-6" />
+            <ChevronRight className="h-5 w-5 text-sage-green" />
           </Button>
 
           {/* Dot Indicators */}
@@ -156,10 +156,10 @@ const DailySpecials = () => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 rounded-full transition-all duration-200 ${
                   index === currentIndex
-                    ? 'bg-primary scale-125'
-                    : 'bg-primary/30 hover:bg-primary/60'
+                    ? 'bg-sage-green'
+                    : 'bg-sage-pale hover:bg-sage-light'
                 }`}
               />
             ))}

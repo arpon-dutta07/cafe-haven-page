@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-coffee-dark/90 backdrop-blur-md shadow-lg'
+          ? 'bg-natural-white/95 backdrop-blur-sm shadow-sm border-b border-sage-pale'
           : 'bg-transparent'
       }`}
     >
@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-cream">
+            <h1 className={`text-2xl font-light ${isScrolled ? 'text-earth-brown' : 'text-natural-white'}`}>
               Coffee Haven
             </h1>
           </div>
@@ -47,7 +47,11 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-cream hover:text-gold transition-colors duration-200 px-3 py-2 text-sm font-medium"
+                  className={`transition-colors duration-200 px-3 py-2 text-sm font-light ${
+                    isScrolled 
+                      ? 'text-earth-brown hover:text-sage-green' 
+                      : 'text-natural-white hover:text-sage-light'
+                  }`}
                 >
                   {item.name}
                 </a>
@@ -61,7 +65,11 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-cream hover:text-gold hover:bg-coffee-medium/20"
+              className={`transition-colors duration-200 ${
+                isScrolled
+                  ? 'text-earth-brown hover:text-sage-green hover:bg-sage-pale/20'
+                  : 'text-natural-white hover:text-sage-light hover:bg-sage-green/20'
+              }`}
             >
               <svg
                 className="h-6 w-6"
@@ -92,12 +100,12 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-coffee-dark/95 backdrop-blur-md rounded-lg mt-2">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-natural-white/95 backdrop-blur-sm rounded-lg mt-2 border border-sage-pale">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-cream hover:text-gold block px-3 py-2 text-base font-medium transition-colors duration-200"
+                  className="text-earth-brown hover:text-sage-green block px-3 py-2 text-base font-light transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}

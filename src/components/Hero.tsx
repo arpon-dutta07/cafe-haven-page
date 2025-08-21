@@ -15,26 +15,26 @@ const Hero = () => {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
+        <div className="absolute inset-0 bg-gradient-earth opacity-60"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
         <div className="fade-in-up">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-cream mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-light text-natural-white mb-8 leading-tight">
             Brewed with Love,
             <br />
-            <span className="text-gold">Served with Passion</span>
+            <span className="text-sage-light font-normal">Served with Passion</span>
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-cream/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Discover the finest blends from around the world in our cozy, welcoming café
+          <p className="text-lg sm:text-xl text-natural-white/85 mb-10 max-w-xl mx-auto leading-relaxed font-light">
+            Discover the finest blends from around the world in our peaceful, welcoming space
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <Button
               size="lg"
-              className="bg-gold hover:bg-gold/90 text-coffee-dark font-semibold px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-sage-green hover:bg-sage-green/90 text-natural-white font-light px-10 py-4 text-lg rounded-sm transition-all duration-200 hover-lift shadow-sm"
             >
               View Menu
             </Button>
@@ -42,17 +42,17 @@ const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-cream text-cream hover:bg-cream hover:text-coffee-dark font-semibold px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105"
+              className="border border-natural-white/30 text-natural-white hover:bg-natural-white/10 font-light px-10 py-4 text-lg rounded-sm transition-all duration-200 hover-lift"
             >
               Our Story
             </Button>
           </div>
 
-          {/* Coffee Cup with Steam Animation */}
+          {/* Coffee Cup with Gentle Steam Animation */}
           <div className="flex justify-center">
             <div className="relative coffee-steam">
-              <div className="w-16 h-16 bg-gradient-warm rounded-full flex items-center justify-center shadow-2xl">
-                <span className="text-2xl">☕</span>
+              <div className="w-12 h-12 bg-sage-light rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-xl text-natural-white">☕</span>
               </div>
             </div>
           </div>

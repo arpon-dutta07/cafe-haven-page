@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '@/components/ui/button';
 import latteArtImage from '@/assets/gallery-latte-art.jpg';
 import pastriesImage from '@/assets/gallery-pastries.jpg';
 import interiorImage from '@/assets/gallery-interior.jpg';
@@ -23,14 +24,14 @@ const galleryItems = [
 
 const Gallery = () => {
   return (
-    <section id="gallery" className="py-16 bg-background">
+    <section id="gallery" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-light text-earth-brown mb-6">
             Gallery
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A glimpse into our world of coffee, craftsmanship, and community
+          <p className="text-lg text-stone-gray max-w-xl mx-auto font-light">
+            A glimpse into our world of coffee and community
           </p>
         </div>
 
@@ -39,7 +40,7 @@ const Gallery = () => {
           {galleryItems.map((item, index) => (
             <div 
               key={item.id}
-              className={`relative group overflow-hidden rounded-xl cursor-pointer hover-zoom ${
+              className={`relative group overflow-hidden rounded-sm cursor-pointer hover-lift transition-all duration-200 ${
                 index % 5 === 0 ? 'md:row-span-2' : ''
               } ${index % 7 === 0 ? 'lg:col-span-2' : ''}`}
             >
@@ -47,24 +48,19 @@ const Gallery = () => {
                 <img 
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
                 />
               </div>
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-coffee-dark/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-earth-brown/60 opacity-0 group-hover:opacity-100 transition-all duration-200 flex items-center justify-center">
                 <div className="text-center p-4">
-                  <h3 className="text-cream font-bold text-lg mb-2">
+                  <h3 className="text-natural-white font-light text-lg mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-gold text-sm font-medium">
+                  <p className="text-sage-light text-xs font-light">
                     {item.category}
                   </p>
-                  <div className="mt-4">
-                    <span className="text-cream text-sm border border-cream/30 px-3 py-1 rounded-full hover:bg-cream hover:text-coffee-dark transition-all duration-200">
-                      View More
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -72,10 +68,10 @@ const Gallery = () => {
         </div>
 
         {/* View More Button */}
-        <div className="text-center mt-12">
-          <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+        <div className="text-center mt-16">
+          <Button className="bg-sage-green hover:bg-sage-green/90 text-natural-white px-10 py-3 rounded-sm font-light transition-all duration-200 hover-lift">
             View Full Gallery
-          </button>
+          </Button>
         </div>
       </div>
     </section>
