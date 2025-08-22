@@ -9,10 +9,10 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Soft Earthy Color Palette */
-    --sage-green: 95 20% 45%;          /* Soft sage green */
-    --sage-light: 95 25% 65%;          /* Light sage */
+    --sage-green: 95 20% 35%;          /* Soft sage green */
+    --sage-light: 95 25% 55%;          /* Light sage */
     --sage-pale: 95 15% 85%;           /* Pale sage */
-    --earth-brown: 30 25% 25%;         /* Soft earth brown */
+    --earth-brown: 30 25% 18%;         /* Soft earth brown */
     --warm-beige: 40 30% 85%;          /* Warm beige */
     --cream-white: 45 40% 96%;         /* Soft cream */
     --stone-gray: 30 8% 55%;           /* Soft stone gray */
@@ -20,39 +20,39 @@ All colors MUST be HSL.
     
     /* Semantic Design Tokens */
     --background: 45 25% 98%;          /* Natural white */
-    --foreground: 30 25% 25%;          /* Earth brown */
+    --foreground: 30 25% 18%;          /* Earth brown */
 
     --card: 45 40% 97%;
-    --card-foreground: 30 25% 25%;
+    --card-foreground: 30 25% 18%;
 
     --popover: 45 40% 97%;
-    --popover-foreground: 30 25% 25%;
+    --popover-foreground: 30 25% 18%;
 
-    --primary: 95 20% 45%;             /* Sage green */
+    --primary: 95 20% 35%;             /* Sage green */
     --primary-foreground: 45 25% 98%;  /* Natural white */
 
     --secondary: 40 30% 85%;           /* Warm beige */
-    --secondary-foreground: 30 25% 25%;
+    --secondary-foreground: 30 25% 18%;
 
     --muted: 40 25% 92%;
     --muted-foreground: 30 8% 55%;
 
-    --accent: 95 25% 65%;              /* Light sage */
-    --accent-foreground: 30 25% 25%;
+    --accent: 95 25% 55%;              /* Light sage */
+    --accent-foreground: 30 25% 18%;
 
     --destructive: 0 50% 55%;
     --destructive-foreground: 45 25% 98%;
 
     --border: 40 20% 88%;
     --input: 40 20% 92%;
-    --ring: 95 20% 45%;
+    --ring: 95 20% 35%;
 
     --radius: 0.5rem;
     
     /* Minimal Gradients */
-    --gradient-soft: linear-gradient(135deg, hsl(95 20% 45%) 0%, hsl(95 25% 65%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(95 20% 35%) 0%, hsl(95 25% 55%) 100%);
     --gradient-warm: linear-gradient(135deg, hsl(40 30% 85%) 0%, hsl(45 40% 96%) 100%);
-    --gradient-earth: linear-gradient(180deg, hsl(30 25% 25%) 0%, hsl(95 20% 45%) 100%);
+    --gradient-earth: linear-gradient(180deg, hsl(30 25% 18%) 0%, hsl(95 20% 35%) 100%);
     
     /* Smooth Animations */
     --transition-smooth: all 0.2s ease-out;
