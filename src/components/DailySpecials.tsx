@@ -101,9 +101,9 @@ const DailySpecials = () => {
             >
               {specials.map((special) => (
                 <div key={special.id} className="w-full flex-shrink-0">
-                  <Card className="bg-card border-0 shadow-sm mx-4 hover-lift transition-all duration-200">
+                  <Card className="bg-sage-green/10 border-0 shadow-lg mx-4 hover-lift transition-all duration-200">
                     <CardContent className="p-8 text-center">
-                      <div className="w-40 h-40 mx-auto mb-6 rounded-sm overflow-hidden shadow-sm">
+                      <div className="w-52 h-52 mx-auto mb-6 rounded-sm overflow-hidden shadow-lg">
                         <img 
                           src={special.image} 
                           alt={special.name}

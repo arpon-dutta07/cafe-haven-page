@@ -35,14 +35,12 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Masonry Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
-          {galleryItems.map((item, index) => (
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+          {galleryItems.map((item) => (
             <div 
               key={item.id}
-              className={`relative group overflow-hidden rounded-sm cursor-pointer hover-lift transition-all duration-200 ${
-                index % 5 === 0 ? 'md:row-span-2' : ''
-              } ${index % 7 === 0 ? 'lg:col-span-2' : ''}`}
+              className="relative group overflow-hidden rounded-sm cursor-pointer hover-lift transition-all duration-200"
             >
               <div className="aspect-square overflow-hidden">
                 <img 
