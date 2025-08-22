@@ -84,10 +84,10 @@ const DailySpecials = () => {
     <section id="specials" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-earth-brown mb-6">
+          <h2 className="text-4xl md:text-5xl font-light text-earth-brown mb-6">
             Today's Special Blends
           </h2>
-          <p className="text-lg text-stone-gray max-w-xl mx-auto font-light">
+          <p className="text-xl text-stone-gray max-w-2xl mx-auto font-light leading-relaxed">
             Handcrafted beverages made with care and the finest ingredients
           </p>
         </div>

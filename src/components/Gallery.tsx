@@ -53,12 +53,12 @@ const Gallery = () => {
               </div>
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-earth-brown/60 opacity-0 group-hover:opacity-100 transition-all duration-200 flex items-center justify-center">
+              <div className="absolute inset-0 bg-earth-brown/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                 <div className="text-center p-4">
-                  <h3 className="text-natural-white font-light text-lg mb-2">
+                  <h3 className="text-natural-white font-medium text-lg mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sage-light text-xs font-light">
+                  <p className="text-sage-light text-sm font-light uppercase tracking-wider">
                     {item.category}
                   </p>
                 </div>
@@ -67,12 +67,6 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* View More Button */}
-        <div className="text-center mt-16">
-          <Button className="bg-sage-green hover:bg-sage-green/90 text-natural-white px-10 py-3 rounded-sm font-light transition-all duration-200 hover-lift">
-            View Full Gallery
-          </Button>
-        </div>
       </div>
     </section>
   );
