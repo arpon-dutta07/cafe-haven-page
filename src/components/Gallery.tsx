@@ -35,43 +35,108 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Modern Masonry Grid */}
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 max-w-7xl mx-auto">
-          {galleryItems.map((item, index) => (
-            <div 
-              key={item.id}
-              className={`relative group overflow-hidden rounded-lg cursor-pointer hover-lift transition-all duration-300 mb-6 break-inside-avoid ${
-                index % 3 === 0 ? 'aspect-[4/5]' : 
-                index % 5 === 0 ? 'aspect-[4/3]' : 
-                'aspect-square'
-              }`}
-            >
-              <div className="w-full h-full overflow-hidden rounded-lg shadow-lg">
+        {/* Pinterest-Style Grid */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-[200px]">
+            {/* Large featured item */}
+            <div className="col-span-2 row-span-2 relative group overflow-hidden rounded-xl cursor-pointer hover-lift transition-all duration-300 shadow-lg">
+              <img 
+                src={galleryItems[0].image}
+                alt={galleryItems[0].title}
+                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-earth-brown via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl">
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-natural-white font-medium text-lg mb-1">
+                    {galleryItems[0].title}
+                  </h3>
+                  <p className="text-sage-light text-sm font-light">
+                    {galleryItems[0].category}
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Medium items */}
+            {galleryItems.slice(1, 3).map((item) => (
+              <div key={item.id} className="col-span-1 row-span-1 relative group overflow-hidden rounded-lg cursor-pointer hover-lift transition-all duration-300 shadow-md">
                 <img 
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-earth-brown/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <h3 className="text-natural-white font-medium text-sm mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-sage-light text-xs">
+                      {item.category}
+                    </p>
+                  </div>
+                </div>
               </div>
-              
-              {/* Modern Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-earth-brown via-earth-brown/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-natural-white font-medium text-lg mb-1">
-                    {item.title}
+            ))}
+            
+            {/* Tall item */}
+            <div className="col-span-1 row-span-2 relative group overflow-hidden rounded-lg cursor-pointer hover-lift transition-all duration-300 shadow-md">
+              <img 
+                src={galleryItems[3].image}
+                alt={galleryItems[3].title}
+                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-earth-brown/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <h3 className="text-natural-white font-medium text-sm mb-1">
+                    {galleryItems[3].title}
                   </h3>
-                  <p className="text-sage-light text-sm font-light uppercase tracking-wider">
-                    {item.category}
+                  <p className="text-sage-light text-xs">
+                    {galleryItems[3].category}
                   </p>
                 </div>
               </div>
-              
-              {/* Modern Corner Badge */}
-              <div className="absolute top-3 right-3 bg-sage-green/90 text-natural-white px-2 py-1 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-300">
-                {item.category}
+            </div>
+            
+            {/* Small items */}
+            {galleryItems.slice(4, 8).map((item) => (
+              <div key={item.id} className="col-span-1 row-span-1 relative group overflow-hidden rounded-lg cursor-pointer hover-lift transition-all duration-300 shadow-md">
+                <img 
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-earth-brown/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <h3 className="text-natural-white font-medium text-sm mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-sage-light text-xs">
+                      {item.category}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+            {/* Wide item */}
+            <div className="col-span-2 row-span-1 relative group overflow-hidden rounded-lg cursor-pointer hover-lift transition-all duration-300 shadow-md">
+              <img 
+                src={galleryItems[8].image}
+                alt={galleryItems[8].title}
+                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-earth-brown/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <h3 className="text-natural-white font-medium text-lg mb-1">
+                    {galleryItems[8].title}
+                  </h3>
+                  <p className="text-sage-light text-sm">
+                    {galleryItems[8].category}
+                  </p>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
 
       </div>

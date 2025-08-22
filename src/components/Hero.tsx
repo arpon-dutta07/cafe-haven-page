@@ -5,17 +5,27 @@ import heroImage from '@/assets/hero-coffee.jpg';
 const Hero = () => {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-earth opacity-60"></div>
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        {/* Video placeholder - you can replace with actual video */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${heroImage})`,
+          }}
+        >
+          {/* Future: Replace with actual video element */}
+          {/* <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/path-to-your-video.mp4" type="video/mp4" />
+          </video> */}
+        </div>
+        <div className="absolute inset-0 bg-gradient-earth opacity-70"></div>
       </div>
 
       {/* Content */}
