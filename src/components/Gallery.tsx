@@ -35,31 +35,40 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
-          {galleryItems.map((item) => (
+        {/* Modern Masonry Grid */}
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 max-w-7xl mx-auto">
+          {galleryItems.map((item, index) => (
             <div 
               key={item.id}
-              className="relative group overflow-hidden rounded-sm cursor-pointer hover-lift transition-all duration-200"
+              className={`relative group overflow-hidden rounded-lg cursor-pointer hover-lift transition-all duration-300 mb-6 break-inside-avoid ${
+                index % 3 === 0 ? 'aspect-[4/5]' : 
+                index % 5 === 0 ? 'aspect-[4/3]' : 
+                'aspect-square'
+              }`}
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="w-full h-full overflow-hidden rounded-lg shadow-lg">
                 <img 
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
                 />
               </div>
               
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-earth-brown/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                <div className="text-center p-4">
-                  <h3 className="text-natural-white font-medium text-lg mb-2">
+              {/* Modern Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-earth-brown via-earth-brown/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-natural-white font-medium text-lg mb-1">
                     {item.title}
                   </h3>
                   <p className="text-sage-light text-sm font-light uppercase tracking-wider">
                     {item.category}
                   </p>
                 </div>
+              </div>
+              
+              {/* Modern Corner Badge */}
+              <div className="absolute top-3 right-3 bg-sage-green/90 text-natural-white px-2 py-1 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-300">
+                {item.category}
               </div>
             </div>
           ))}
