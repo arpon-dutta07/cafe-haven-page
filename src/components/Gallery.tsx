@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowUpRight, X } from 'lucide-react';
+import { ArrowUpRight, X, Coffee } from 'lucide-react';
 import latteArtImage from '@/assets/gallery-latte-art.jpg';
 import pastriesImage from '@/assets/gallery-pastries.jpg';
 import interiorImage from '@/assets/gallery-interior.jpg';
@@ -84,13 +84,14 @@ const BentoItem = ({ item, onClick, className }) => {
       className={`relative group overflow-hidden rounded-2xl cursor-pointer transition-all duration-500 ${className}`}
       onClick={() => onClick(item)}
     >
-      <div className="absolute inset-0 bg-black/20 z-10"></div>
+      <div className="absolute inset-0 bg-black/40 z-10"></div> {/* Darker overlay */}
       <img 
         src={item.image}
         alt={item.title}
         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-20 opacity-80 group-hover:opacity-90 transition-all duration-500">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20 opacity-90 group-hover:opacity-95 transition-all duration-500">
+        {/* Darker gradient */}
         <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
           <div className="flex items-center justify-between">
             <div>
@@ -100,11 +101,12 @@ const BentoItem = ({ item, onClick, className }) => {
               <h3 className="text-white font-medium text-lg md:text-xl mb-2">
                 {item.title}
               </h3>
-              <p className="text-white/80 text-sm font-light max-w-xs hidden md:block">
+              <p className="text-white/90 text-sm font-light max-w-xs hidden md:block">
                 {item.description}
               </p>
             </div>
-            <div className="bg-earth-brown/90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <div className="bg-[#5D4037] rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              {/* Darker brown color */}
               <ArrowUpRight className="w-4 h-4 text-white" />
             </div>
           </div>
@@ -119,8 +121,9 @@ const ImageModal = ({ item, onClose }) => {
   if (!item) return null;
   
   return (
-    <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
-      <div className="bg-white rounded-2xl overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row shadow-2xl">
+    <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300">
+      {/* Darker overlay */}
+      <div className="bg-[#F5F5F5] rounded-2xl overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row shadow-2xl">
         <div className="md:w-1/2 h-64 md:h-auto relative">
           <img 
             src={item.image} 
@@ -129,24 +132,27 @@ const ImageModal = ({ item, onClose }) => {
           />
           <button 
             onClick={onClose}
-            className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-300"
+            className="absolute top-4 right-4 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-all duration-300"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
-        <div className="md:w-1/2 p-6 md:p-8 overflow-y-auto">
-          <span className="text-earth-brown/80 text-xs font-medium uppercase tracking-wider mb-2 inline-block">
-            {item.category}
-          </span>
-          <h3 className="text-earth-brown text-2xl md:text-3xl font-medium mb-4">
+        <div className="md:w-1/2 p-6 md:p-8 overflow-y-auto bg-[#F5F5F5]"> {/* Slightly darker background */}
+          <div className="flex items-center gap-2 mb-2">
+            <Coffee className="w-5 h-5 text-[#5D4037]" /> {/* Coffee icon */}
+            <span className="text-[#5D4037]/80 text-xs font-medium uppercase tracking-wider inline-block">
+              {item.category}
+            </span>
+          </div>
+          <h3 className="text-[#3E2723] text-2xl md:text-3xl font-medium mb-4"> {/* Darker brown text */}
             {item.title}
           </h3>
-          <p className="text-stone-gray text-base mb-6 leading-relaxed">
+          <p className="text-[#4E342E] text-base mb-6 leading-relaxed"> {/* Darker text */}
             {item.details}
           </p>
           <Button 
             onClick={onClose}
-            className="bg-earth-brown hover:bg-earth-brown/90 text-white"
+            className="bg-[#5D4037] hover:bg-[#4E342E] text-white" /* Darker brown button */
           >
             Close
           </Button>
@@ -170,27 +176,27 @@ const Gallery = () => {
   };
   
   return (
-    <section id="gallery" className="py-20 bg-background">
+    <section id="gallery" className="py-20 bg-[#FAFAFA]"> {/* Slightly darker background */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-earth-brown mb-6">
+          <h2 className="text-3xl md:text-4xl font-light text-[#5D4037] mb-6"> {/* Darker brown heading */}
             Our Gallery
           </h2>
-          <p className="text-lg text-stone-gray max-w-2xl mx-auto font-light">
+          <p className="text-lg text-[#5D4037]/80 max-w-2xl mx-auto font-light"> {/* Darker text */}
             A glimpse into our world of coffee and community. Each image tells a story of our passion for quality and craftsmanship.
           </p>
         </div>
 
         {/* Bento Grid Layout */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[200px]">
-            {/* Featured large item (spans 2x2) */}
-            <div className="md:col-span-2 md:row-span-2">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-5 auto-rows-[250px] md:auto-rows-[180px]">
+            {/* Featured large item (spans 3x2) */}
+            <div className="md:col-span-3 md:row-span-2">
               <BentoItem item={galleryItems[0]} onClick={handleItemClick} className="h-full shadow-xl" />
             </div>
             
-            {/* Medium item (spans 2x1) */}
-            <div className="md:col-span-2 md:row-span-1">
+            {/* Medium item (spans 3x1) */}
+            <div className="md:col-span-3 md:row-span-1">
               <BentoItem item={galleryItems[1]} onClick={handleItemClick} className="h-full shadow-lg" />
             </div>
             
@@ -204,13 +210,13 @@ const Gallery = () => {
               <BentoItem item={galleryItems[3]} onClick={handleItemClick} className="h-full shadow-md" />
             </div>
             
-            {/* Tall item (spans 1x2) */}
-            <div className="md:col-span-1 md:row-span-2">
-              <BentoItem item={galleryItems[4]} onClick={handleItemClick} className="h-full shadow-lg" />
+            {/* Small item */}
+            <div className="md:col-span-1 md:row-span-1">
+              <BentoItem item={galleryItems[4]} onClick={handleItemClick} className="h-full shadow-md" />
             </div>
             
-            {/* Medium item (spans 2x1) */}
-            <div className="md:col-span-2 md:row-span-1">
+            {/* Medium item (spans 3x1) */}
+            <div className="md:col-span-3 md:row-span-1">
               <BentoItem item={galleryItems[5]} onClick={handleItemClick} className="h-full shadow-lg" />
             </div>
             
@@ -219,15 +225,15 @@ const Gallery = () => {
               <BentoItem item={galleryItems[6]} onClick={handleItemClick} className="h-full shadow-md" />
             </div>
             
-            {/* Wide item (spans 4x1) */}
-            <div className="md:col-span-4 md:row-span-1">
-              <BentoItem item={galleryItems[7]} onClick={handleItemClick} className="h-full shadow-xl" />
+            {/* Medium item (spans 2x1) - Seating image */}
+            <div className="md:col-span-2 md:row-span-1">
+              <BentoItem item={galleryItems[7]} onClick={handleItemClick} className="h-full shadow-lg" />
             </div>
           </div>
           
           {/* View All Button */}
           <div className="mt-10 text-center">
-            <Button variant="outline" className="border-earth-brown text-earth-brown hover:bg-earth-brown/10 px-6 py-2">
+            <Button variant="outline" className="border-[#5D4037] text-[#5D4037] hover:bg-[#5D4037]/10 px-6 py-2">
               View Full Gallery
             </Button>
           </div>
